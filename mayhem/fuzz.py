@@ -8,7 +8,7 @@ with atheris.instrument_imports():
 @atheris.instrument_func
 def TestOneInput(data):
     fdp = atheris.FuzzedDataProvider(data)
-    in_str = fdp.ConsumeString(4096)
+    in_str = fdp.ConsumeString(128)
     html2text.html2text(in_str)
 
 def main():
