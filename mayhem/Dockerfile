@@ -1,6 +1,6 @@
 FROM fuzzers/atheris:2.0.7-python3.9
 
-COPY . /thefuzz
+COPY . /html-2-text
 
 # Build Project
 WORKDIR /html-2-text
