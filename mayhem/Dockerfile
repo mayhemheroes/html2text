@@ -6,5 +6,5 @@ COPY . /html-2-text
 WORKDIR /html-2-text
 RUN pip install .
 
-# Change Permissions
-RUN chmod +x /html-2-text/mayhem/fuzz.py
+# Change Permissions (this will make the fuzzer executable)
+RUN chmod +x /html-2-text/mayhem/fuzz-html2text.py
