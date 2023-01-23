@@ -1,0 +1,5 @@
+project: html-2-text
+target: convert
+cmds:
+  - cmd: /html-2-text/mayhem/fuzz-html2text.py
+    libfuzzer: true
