@@ -1,0 +1,15 @@
+# Mayhem target: html2text HTML -> Markdown converter (Atheris/libFuzzer harness).
+# The cmd binary is the compiled ELF launcher that drives mayhem/fuzz-html2text.py; Atheris
+# instruments the html2text module so the run records coverage (edges). Target name `convert`
+# is preserved from the pre-port integration so run history stays attached.
+project: html2text
+target: convert
+
+cmds:
+  - cmd: /mayhem/html2text_fuzzer
+    libfuzzer: true
+
+# Seed corpus: upstream's own test fixtures (test/*.html).
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/convert/testsuite
